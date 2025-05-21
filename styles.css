@@ -1,0 +1,30 @@
+#floatingClicker {
+    position: fixed;
+    z-index: 99999;
+    background: white;
+    border: 2px solid #333;
+    padding: 10px;
+    width: 180px;
+    font-family: sans-serif;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 8px;
+  }
+  
+  #floatingHeader {
+    background: #333;
+    color: white;
+    padding: 5px;
+    cursor: move;
+    font-weight: bold;
+    margin: -10px -10px 10px -10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  
+  #clickBtn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
