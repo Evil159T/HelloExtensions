@@ -1,7 +1,6 @@
 document.addEventListener('click', () => {
-    chrome.storage.local.get(['totalClicks'], (result) => {
-      let current = result.totalClicks || 0;
-      chrome.storage.local.set({ totalClicks: current + 1 });
-    });
+  chrome.storage.local.get(['totalClicks'], (result) => {
+    chrome.storage.local.set({ totalClicks: (result.totalClicks || 0) + 1 });
+    
   });
-  
+});

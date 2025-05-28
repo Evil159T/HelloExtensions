@@ -4,7 +4,6 @@ chrome.action.onClicked.addListener((tab) => {
   const tabId = tab.id;
 
   if (injectedTabs[tabId]) {
-    // Quitar la ventanita
     chrome.scripting.executeScript({
       target: { tabId },
       func: () => {
@@ -14,7 +13,6 @@ chrome.action.onClicked.addListener((tab) => {
     });
     delete injectedTabs[tabId];
   } else {
-    // Inyectar script y estilo
     chrome.scripting.insertCSS({
       target: { tabId },
       files: ["styles.css"]

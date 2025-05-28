@@ -1,25 +1,17 @@
 {
-  "name": "Clicker Global Extension",
-  "description": "Cuenta todos los clics en Chrome y tiene una ventana flotante",
+  "name": "Clicker Extension",
+  "description": "Contador global de clics con mejoras y clics automáticos.",
   "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_icon": "icon.png"
-  },
-  "permissions": ["scripting", "storage", "activeTab"],
+  "permissions": ["storage", "scripting", "activeTab"],
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["floating.js", "styles.css"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "web_accessible_resources": [{
+    "resources": ["floating.html", "styles.css", "clicker.png"],
+    "matches": ["<all_urls>"]
+  }]
 }

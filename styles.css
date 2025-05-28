@@ -1,30 +1,131 @@
 #floatingClicker {
-    position: fixed;
-    z-index: 99999;
-    background: white;
-    border: 2px solid #333;
-    padding: 10px;
-    width: 180px;
-    font-family: sans-serif;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    border-radius: 8px;
-  }
-  
-  #floatingHeader {
-    background: #333;
-    color: white;
-    padding: 5px;
-    cursor: move;
-    font-weight: bold;
-    margin: -10px -10px 10px -10px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-  }
-  
-  #clickBtn {
-    margin-top: 10px;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 300px;
+  padding: 15px;
+  background-color: white;
+  border: 2px solid #000;
+  border-radius: 10px;
+  z-index: 9999;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#floatingHeader {
+  cursor: move;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#clickerContent {
+  text-align: center;
+}
+
+#clickImg {
+  width: 120px;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  transition: transform 0.1s ease;
+}
+
+
+#clickImg.clicked {
+  transform: scale(0.9);
+}
+
+#shopToggle {
+  position: relative;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#shopPanel {
+  margin-top: 10px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-top: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+#shopPanel h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+#shopPanel ul {
+  list-style: none;
+  padding: 0;
+}
+
+#shopPanel li {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  position: relative;
+}
+
+#shopPanel button {
+  margin-top: 5px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#shopPanel button.shake {
+  animation: shake 0.4s;
+  background-color: #ff4d4d !important;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0px); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0px); }
+}
+
+.upgrade-tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1000;
+  font-size: 12px;
+}
+
+li:hover .upgrade-tooltip {
+  visibility: visible;
+}
+
+#errorMsg {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
